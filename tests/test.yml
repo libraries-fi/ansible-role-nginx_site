@@ -1,0 +1,16 @@
+---
+- hosts: default
+  remote_user: root
+  roles:
+    - role: ajsalminen.nginx_site
+      tags: default
+    - role: ajsalminen.nginx_site
+      httpd_site_name: example.com
+      tags: normal
+- hosts: default
+  remote_user: root
+  roles:
+    - role: ajsalminen.nginx_site
+      httpd_site_name: example.com
+      local_test_environment: .local
+      tags: local

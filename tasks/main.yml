@@ -1,0 +1,25 @@
+---
+# tasks file for nginx_site
+
+- name: Ensure directories are present
+  file:
+    path: "{{item}}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+  with_items:
+    - "{{ nginx_site_enabled_dir }}"
+    - "{{ nginx_site_config_dir }}"
+
+
+- name: Copy site configuration.
+  template:
+    src: "{{ nginx_site_template }}"
+    dest: "{{ nginx_site_config_dir }}/{{ httpd_site_name }}"
+
+
+
+- name: Enable site.
+  file: state=link src=/etc/nginx/sites-available/{{httpd_site_name}} dest={{ nginx_site_enabled_dir }}/{{httpd_site_name}} owner=root group=root
+  # notify: restart nginx

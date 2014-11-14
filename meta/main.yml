@@ -1,0 +1,27 @@
+---
+galaxy_info:
+  author: Antti Salminen
+  description:
+  company: Libraries.fi / Helsinki City Library
+  license: MIT
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+  - packaging
+  - system
+dependencies:
+  - role: ajsalminen.httpd_site
+    # The following variables should be defined when using this role:
+    # httpd_site_name:
+    # httpd_site_webroot:
+    # httpd_site_robots_txt:
+    # httpd_site_robots_txt_dir:
+    # httpd_site_robots_txt_filename:
+  - ajsalminen.nginx_common
+allow_duplicates: yes

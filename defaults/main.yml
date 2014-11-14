@@ -1,0 +1,5 @@
+---
+# defaults file for nginx_site
+nginx_site_template: "{{role_path}}/templates/default.j2"
+nginx_site_config_dir: /etc/nginx/sites-available
+nginx_site_enabled_dir:  /etc/nginx/sites-enabled
