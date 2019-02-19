@@ -23,5 +23,4 @@ dependencies:
     # httpd_site_robots_txt:
     # httpd_site_robots_txt_dir:
     # httpd_site_robots_txt_filename:
-  - ajsalminen.nginx_common
 allow_duplicates: yes
